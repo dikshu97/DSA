@@ -133,4 +133,67 @@ int main() {
 }
 
 
-//question==6; 
+//question==6; prime number
+
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+
+int num;
+cin>> num;
+int nof=0;
+for(int div=1;div<=num;div++){
+    if(num%div==0){
+      nof++;
+    break;   
+    }
+   
+}
+if(nof==0){
+    cout<<"not prime numbers"<<num<<endl;
+}else{
+    cout<<" prime numbers"<<num<<endl;   
+}
+
+
+    return 0;
+}
+
+
+//question=6; Prime number;
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int num;
+    cin>>num;
+    int div=1;
+    int temp=num;
+    
+    int nod=0;
+    
+    while (temp>0){
+        temp=temp/10;
+        nod++;
+    }
+    div=pow(10,nod-1);
+    cout<<nod<<endl;
+    
+    while(div>0){
+        int fd=num/div;
+        cout<<fd<<endl;
+        num=num%div;
+        div=div/10;
+    }
+    
+    
+    
+    return 0;
+}
+
