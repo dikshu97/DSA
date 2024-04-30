@@ -73,8 +73,9 @@ int ls(int* arr1,int tar,int size){
         if(arr1[i]==tar){
             return i;
         }
-        return -1;
+        
     }
+    return -1;
 }
 int main() {
 int size;
@@ -88,5 +89,70 @@ int  ans=ls(arr,40,size);
 cout<<ans<<endl;
     return 0;
 }
+
+//question=5;
+
+//when you have to find the frequency of number
+
+#include <iostream>
+using namespace std;
+int freq(int* arr,int tar,int size){
+    int freq=0;
+    for(int i=0;i<size;i++){
+        if(arr[i]==tar){
+            freq++;
+        }
+      
+    }
+      return freq;
+}
+
+int main() {
+    int size;
+    cin>>size;
+    
+    int* array=new int[size];
+    for(int i=0;i<size;i++){
+       cin>>array[i]; 
+    }
+    int ans=freq(array,5,size);
+    cout<<ans<<endl;
+
+    return 0;
+}
+
+//question=6
+//finding maximum and minimum and span of the array
+
+
+#include <iostream>
+using namespace std;
+int span(int* arr,int size){
+    int  max=arr[0];
+    int min=arr[0];
+    for(int i=0;i<size;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }if(arr[i]<min){
+            min=arr[i];
+        }
+        
+    }
+    cout<<"maximum of tghis array is:"<<max<<endl;
+        cout<<"minumum of tghis array is:"<<min<<endl;
+    return max-min;
+}
+int main() {
+ int size;
+ cin>>size;
+ int* array=new int[size];
+ for(int i=0;i<size;i++){
+     cin>>array[i];
+ }
+ int ans=span(array,size);
+ cout<<ans<<endl;
+    return 0;
+}
+
 
 
