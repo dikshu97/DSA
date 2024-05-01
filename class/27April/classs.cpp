@@ -153,6 +153,87 @@ int main() {
  cout<<ans<<endl;
     return 0;
 }
+//question==7;;
+//to find the number or prime number of the array;
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int primecount(int* arr ,int size){
+    int nop=0;
+    
+    for(int i=0;i<size;i++){
+     int  num=arr[i];
+     int nof=0;
+     
+     for(int div=2;div*div<=num;div++){
+         if(num%div==0){
+             nof++;
+             break;
+         }
+     }
+     if(nof==0){
+         nop++;
+     }
+    }
+    return nop;
+}
+int main() {
+    int size;
+    cin>>size;
+    
+    int* array=new int[size];
+    for(int i=0;i<size;i++){
+        cin>>array[i];
+    }
+    int ans=primecount(array,size);
+    cout<<"number of prime number are:"<<ans<<endl;
+
+    return 0;
+}
+
+//question==8;
+//finding the number through the binary search
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int binarysearch(int* arr,int size,int tar){
+    int start=0;
+    int end=size-1;
+    while(start<=end){
+        int mid=start+end/2;
+        if(arr[mid]==tar){
+            return start;
+        }
+        else if(arr[mid]){
+            start=mid+1;
+        }else{
+            end=mid-1;
+        }
+    }
+    return -1;
+}
+
+
+int main() {
+    int size;
+    cin>>size;
+    int* array=new int[size];
+    for(int i=0;i<size;i++){
+        cin>>array[i];
+    }
+    int target;
+    cin>>target;
+    int ans=binarysearch(array,size,target);
+    cout<<ans<<endl;
+    
+
+    return 0;
+}
+
+
+//question==9;;
+//
 
 
 
